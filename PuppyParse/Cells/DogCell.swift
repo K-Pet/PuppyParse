@@ -10,6 +10,8 @@ struct DogCell: View {
     let breed: String
     let subBreed: String?
     @State private var isStarred: Bool = false
+    @AppStorage("starredBreeds") var starredBreeds: String = ""
+
 
     var body: some View {
         ZStack {
@@ -43,7 +45,24 @@ struct DogCell: View {
                 Image(systemName: isStarred ? "star.fill" : "star")
                     .onTapGesture {
                         self.isStarred.toggle()
-                        
+                        if self.isStarred {
+                            // Add breed to starred list
+                            if subBreed != nil{
+                                self.starredBreeds.append((self.subBreed ?? "") + " " + self.breed + ",")
+                            } else {
+                                self.starredBreeds.append(self.breed + ",")
+                            }
+                            
+                        } else {
+                            // Remove breed from starred list
+                            if subBreed != nil{
+                                self.starredBreeds = self.starredBreeds.replacingOccurrences(of: (self.subBreed ?? "") + self.breed + ",", with: "")
+                            } else {
+                                self.starredBreeds = self.starredBreeds.replacingOccurrences(of: self.breed + ",", with: "")
+                            }
+                            
+                        }
+                        print(self.starredBreeds)
                     }
                     .offset(x: 175, y: 75)
 
