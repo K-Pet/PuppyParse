@@ -17,13 +17,6 @@ struct DogDetailView: View {
     
     var body: some View {
         VStack {
-            if let subBreed = subBreed {
-                Text("\(subBreed.capitalized)" + " \(breed.capitalized)")
-                    .font(.custom("HelloValentica-Regular", size: 30))
-            } else {
-                Text("\(breed.capitalized)")
-                    .font(.custom("HelloValentica-Regular", size: 30))
-            }
             ZStack {
                 if breed == "whippet"{
                     Color.pink
@@ -33,18 +26,46 @@ struct DogDetailView: View {
                         .ignoresSafeArea()
                 }
                 if nc.isRefreshing {
-                    ProgressView()
+                    LottieView(name: "127157-moody-dog", loopMode: .loop)
+                        .scaleEffect(0.3)
                 } else {
                     List {
-                        ForEach(nc.pictures, id: \.self) { url in
+                        Section {
+                            ForEach(nc.pictures, id: \.self) { url in
 
-                                KFImage(URL(string: url))
-                                    .resizable()
-                                    .scaledToFit()
-                                    .listRowBackground(Color.clear)
-                                    .cornerRadius(15)
-                            
-                        }.listRowSeparator(.hidden)
+                                    KFImage(URL(string: url))
+                                        .resizable()
+                                        .scaledToFit()
+                                        .listRowBackground(Color.clear)
+                                        .cornerRadius(15)
+                                        .shadow(color: .black, radius: 1)
+                                        .shadow(color: .black, radius: 1)
+                                        .shadow(color: .black, radius: 1)
+                                        .shadow(color: .black, radius: 1)
+                                
+                            }.listRowSeparator(.hidden)
+                        } header: {
+                            if let subBreed = subBreed {
+                                Text("\(subBreed.capitalized)" + " \(breed.capitalized)")
+                                    .font(.custom("HelloValentica-Regular", size: 30))
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .textCase(nil)
+                                    .shadow(color: .black, radius: 1)
+                                    .shadow(color: .black, radius: 1)
+                                    .shadow(color: .black, radius: 1)
+                                    .shadow(color: .black, radius: 1)
+                            } else {
+                                Text("\(breed.capitalized)")
+                                    .font(.custom("HelloValentica-Regular", size: 30))
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .textCase(nil)
+                                    .shadow(color: .black, radius: 1)
+                                    .shadow(color: .black, radius: 1)
+                                    .shadow(color: .black, radius: 1)
+                                    .shadow(color: .black, radius: 1)
+                            }                        }
                     }
                     .scrollContentBackground(.hidden)
                     

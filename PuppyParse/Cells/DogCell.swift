@@ -43,6 +43,7 @@ struct DogCell: View {
                 Image(systemName: isStarred ? "star.fill" : "star")
                     .onTapGesture {
                         self.isStarred.toggle()
+                        
                     }
                     .offset(x: 175, y: 75)
 

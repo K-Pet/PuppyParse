@@ -13,6 +13,7 @@
 		CDE5BD0C2A2F6D1500AC9693 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CDE5BD0B2A2F6D1500AC9693 /* Lottie */; };
 		CDE5BD0F2A2F6DB900AC9693 /* 127157-moody-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = CDE5BD0E2A2F6DB900AC9693 /* 127157-moody-dog.json */; };
 		CDE5BD112A2F6DEB00AC9693 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5BD102A2F6DEB00AC9693 /* LottieView.swift */; };
+		CDE5BD132A2F790200AC9693 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5BD122A2F790200AC9693 /* SplashScreenView.swift */; };
 		CDF799382A2E791900C2C79B /* PuppyParseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799372A2E791900C2C79B /* PuppyParseApp.swift */; };
 		CDF7993A2A2E791900C2C79B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799392A2E791900C2C79B /* HomeView.swift */; };
 		CDF7993C2A2E791C00C2C79B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF7993B2A2E791C00C2C79B /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		CDE5BD022A2F451200AC9693 /* Hello Valentina.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hello Valentina.ttf"; sourceTree = "<group>"; };
 		CDE5BD0E2A2F6DB900AC9693 /* 127157-moody-dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "127157-moody-dog.json"; sourceTree = "<group>"; };
 		CDE5BD102A2F6DEB00AC9693 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		CDE5BD122A2F790200AC9693 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		CDF799342A2E791900C2C79B /* PuppyParse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppyParse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF799372A2E791900C2C79B /* PuppyParseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyParseApp.swift; sourceTree = "<group>"; };
 		CDF799392A2E791900C2C79B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				CDF799392A2E791900C2C79B /* HomeView.swift */,
 				CDF7994F2A2EB76E00C2C79B /* DogDetailView.swift */,
 				CDE5BD102A2F6DEB00AC9693 /* LottieView.swift */,
+				CDE5BD122A2F790200AC9693 /* SplashScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				CDF7993A2A2E791900C2C79B /* HomeView.swift in Sources */,
 				CDF799382A2E791900C2C79B /* PuppyParseApp.swift in Sources */,
 				CDF799502A2EB76E00C2C79B /* DogDetailView.swift in Sources */,
+				CDE5BD132A2F790200AC9693 /* SplashScreenView.swift in Sources */,
 				CDF7994A2A2E8BDD00C2C79B /* DogCell.swift in Sources */,
 				CDF799522A2ECC5800C2C79B /* NetworkCollarEndpoints.swift in Sources */,
 			);
@@ -364,8 +368,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -395,8 +399,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
