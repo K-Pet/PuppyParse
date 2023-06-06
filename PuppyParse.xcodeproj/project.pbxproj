@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		CDF799382A2E791900C2C79B /* PuppyParseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799372A2E791900C2C79B /* PuppyParseApp.swift */; };
-		CDF7993A2A2E791900C2C79B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799392A2E791900C2C79B /* ContentView.swift */; };
+		CDF7993A2A2E791900C2C79B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799392A2E791900C2C79B /* HomeView.swift */; };
 		CDF7993C2A2E791C00C2C79B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF7993B2A2E791C00C2C79B /* Assets.xcassets */; };
 		CDF7993F2A2E791C00C2C79B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF7993E2A2E791C00C2C79B /* Preview Assets.xcassets */; };
+		CDF7994A2A2E8BDD00C2C79B /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799492A2E8BDD00C2C79B /* DogCell.swift */; };
+		CDF7994C2A2E8C9300C2C79B /* DogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7994B2A2E8C9300C2C79B /* DogList.swift */; };
+		CDF7994E2A2E907C00C2C79B /* NetworkCollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7994D2A2E907B00C2C79B /* NetworkCollar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CDF799342A2E791900C2C79B /* PuppyParse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppyParse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF799372A2E791900C2C79B /* PuppyParseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyParseApp.swift; sourceTree = "<group>"; };
-		CDF799392A2E791900C2C79B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CDF799392A2E791900C2C79B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CDF7993B2A2E791C00C2C79B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF7993E2A2E791C00C2C79B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CDF799492A2E8BDD00C2C79B /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
+		CDF7994B2A2E8C9300C2C79B /* DogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogList.swift; sourceTree = "<group>"; };
+		CDF7994D2A2E907B00C2C79B /* NetworkCollar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCollar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				CDF799372A2E791900C2C79B /* PuppyParseApp.swift */,
-				CDF799392A2E791900C2C79B /* ContentView.swift */,
+				CDF799452A2E8B3800C2C79B /* Views */,
+				CDF799472A2E8B7A00C2C79B /* Cells */,
+				CDF799482A2E8B8800C2C79B /* Models */,
 				CDF7993B2A2E791C00C2C79B /* Assets.xcassets */,
 				CDF7993D2A2E791C00C2C79B /* Preview Content */,
 			);
@@ -65,6 +73,31 @@
 				CDF7993E2A2E791C00C2C79B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CDF799452A2E8B3800C2C79B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDF799392A2E791900C2C79B /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CDF799472A2E8B7A00C2C79B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CDF799492A2E8BDD00C2C79B /* DogCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CDF799482A2E8B8800C2C79B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDF7994B2A2E8C9300C2C79B /* DogList.swift */,
+				CDF7994D2A2E907B00C2C79B /* NetworkCollar.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF7993A2A2E791900C2C79B /* ContentView.swift in Sources */,
+				CDF7994E2A2E907C00C2C79B /* NetworkCollar.swift in Sources */,
+				CDF7994C2A2E8C9300C2C79B /* DogList.swift in Sources */,
+				CDF7993A2A2E791900C2C79B /* HomeView.swift in Sources */,
 				CDF799382A2E791900C2C79B /* PuppyParseApp.swift in Sources */,
+				CDF7994A2A2E8BDD00C2C79B /* DogCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +311,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +341,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
