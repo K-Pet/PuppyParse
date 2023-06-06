@@ -20,7 +20,7 @@ final class NetworkCollar: ObservableObject {
         if let url = URL(string: endpoints.url) {
             URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
                 
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     // Handle any errors
                     if let error = error {
                         print("❌ Network error: \(error.localizedDescription)")

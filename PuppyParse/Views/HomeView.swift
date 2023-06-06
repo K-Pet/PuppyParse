@@ -11,9 +11,8 @@ struct HomeView: View {
     
     @StateObject private var nc = NetworkCollar()
     @State private var searchText = ""
-    @State private var starredDogs: Set<String> = []
 
-    
+
     var body: some View {
         NavigationView{
             VStack {
@@ -23,13 +22,13 @@ struct HomeView: View {
                 
                 ZStack {
                     if nc.isRefreshing {
-                        ProgressView()
+                        LottieView(name: "127157-moody-dog", loopMode: .loop)
+                            .scaleEffect(0.3)
                     } else {
                         List {
                             ForEach(searchResults, id: \.0) { (key, values) in
                                 if !values.isEmpty {
                                     ForEach(values, id: \.self) { value in
-                                        let identifier = "\(key.capitalized):\(value.capitalized)"
                                         ZStack {
                                             NavigationLink(destination: DogDetailView(breed: key, subBreed: value)) {
                                                 EmptyView()
@@ -40,7 +39,6 @@ struct HomeView: View {
                                         }
                                     }
                                 } else {
-                                    let identifier = "\(key.capitalized)"
                                     ZStack {
                                         NavigationLink(destination: DogDetailView(breed: key, subBreed: nil)) {
                                             EmptyView()
@@ -48,7 +46,6 @@ struct HomeView: View {
                                         .opacity(0.0)
                                         
                                         DogCell(breed: key.capitalized, subBreed: nil)
-                                    
                                     }
                                 }
                             }.listRowSeparator(.hidden)
@@ -80,7 +77,7 @@ struct HomeView: View {
             }
         }
     }
-    
+
 }
 
 

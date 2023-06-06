@@ -9,7 +9,8 @@ import SwiftUI
 struct DogCell: View {
     let breed: String
     let subBreed: String?
-    
+    @State private var isStarred: Bool = false
+
     var body: some View {
         ZStack {
             ZStack{
@@ -25,14 +26,26 @@ struct DogCell: View {
                         .font(.custom("HelloValentica-Regular", size: 30))
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
-                        .scaledToFit()
+                        .shadow(color: .black, radius: 1)
+                        .shadow(color: .black, radius: 1)
+                        .shadow(color: .black, radius: 1)
+                        .shadow(color: .black, radius: 1)
                 } else {
                     Text("\(breed.capitalized)")
                         .font(.custom("HelloValentica-Regular", size: 30))
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
-                        .scaledToFit()
+                        .shadow(color: .black, radius: 1)
+                        .shadow(color: .black, radius: 1)
+                        .shadow(color: .black, radius: 1)
+                        .shadow(color: .black, radius: 1)
                 }
+                Image(systemName: isStarred ? "star.fill" : "star")
+                    .onTapGesture {
+                        self.isStarred.toggle()
+                    }
+                    .offset(x: 175, y: 75)
+
             }
         }
     }
