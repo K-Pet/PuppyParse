@@ -4,15 +4,44 @@
 //
 //  Created by Kobe Petrus on 6/5/23.
 //
-
 import SwiftUI
 
 struct DogCell: View {
-    let breed : String
-        
+    let breed: String
+    let subBreed: String?
+    
     var body: some View {
-        Text("\(breed)")
-            .fontWeight(.semibold)
+        ZStack {
+            ZStack{
+                Image("dog_paw")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 200)
+                    .cornerRadius(15)
+                    .background(Color.tan).cornerRadius(20)
+
+                if let subBreed = subBreed {
+                    Text("\(subBreed.capitalized)" + " \(breed.capitalized)")
+                        .font(.custom("HelloValentica-Regular", size: 30))
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                        .scaledToFit()
+                } else {
+                    Text("\(breed.capitalized)")
+                        .font(.custom("HelloValentica-Regular", size: 30))
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                        .scaledToFit()
+                }
+            }
+        }
+    }
+}
+
+struct DogCell_Previews: PreviewProvider {
+    static var previews: some View {
+        DogCell(breed: "greyhound", subBreed: "italian")
+            .previewLayout(.sizeThatFits)
     }
 }
 

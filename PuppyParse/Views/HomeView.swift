@@ -10,30 +10,53 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var nc = NetworkCollar()
+    @State private var searchText = ""
+    @State private var starredDogs: Set<String> = []
 
+    
     var body: some View {
         NavigationView{
-            ZStack {
-                if nc.isRefreshing {
-                    ProgressView()
-                } else {
-                    List {
-                        ForEach(nc.dogs.keys.sorted(), id: \.self) { key in
-                            if let values = nc.dogs[key], !values.isEmpty {
-                                ForEach(values, id: \.self) { value in
-                                    NavigationLink(destination: DogDetailView(breed: key, subBreed: value)) {
-                                        DogCell(breed: value + " " + key)
+            VStack {
+                Text("Puppy Parse")
+                    .font(.custom("HelloValentica-Regular", size: 40))
+                    .padding()
+                
+                ZStack {
+                    if nc.isRefreshing {
+                        ProgressView()
+                    } else {
+                        List {
+                            ForEach(searchResults, id: \.0) { (key, values) in
+                                if !values.isEmpty {
+                                    ForEach(values, id: \.self) { value in
+                                        let identifier = "\(key.capitalized):\(value.capitalized)"
+                                        ZStack {
+                                            NavigationLink(destination: DogDetailView(breed: key, subBreed: value)) {
+                                                EmptyView()
+                                            }
+                                            .opacity(0.0)
+                                            
+                                            DogCell(breed: key.capitalized, subBreed: value.capitalized)
+                                        }
+                                    }
+                                } else {
+                                    let identifier = "\(key.capitalized)"
+                                    ZStack {
+                                        NavigationLink(destination: DogDetailView(breed: key, subBreed: nil)) {
+                                            EmptyView()
+                                        }
+                                        .opacity(0.0)
+                                        
+                                        DogCell(breed: key.capitalized, subBreed: nil)
+                                    
                                     }
                                 }
-                            } else {
-                                NavigationLink(destination: DogDetailView(breed: key, subBreed: nil)) {
-                                    DogCell(breed: key)
-                                }
-                            }
+                            }.listRowSeparator(.hidden)
                         }
+                        
+                        .listStyle(.plain)
+                        .searchable(text: $searchText)
                     }
-                    .listStyle(.plain)
-                    .navigationTitle("PuppyParse")
                 }
             }
         }
@@ -41,7 +64,26 @@ struct HomeView: View {
             nc.fetchDogData(endpoints: .breeds)
         }
     }
+    
+    var searchResults: [(String, [String])] {
+        if searchText.isEmpty {
+            return Array(nc.dogs)
+        } else {
+            let lowercaseSearchText = searchText.localizedLowercase
+            return Array(nc.dogs).compactMap { key, values in
+                let matchingSubBreeds = values.filter { $0.localizedLowercase.contains(lowercaseSearchText) }
+                if key.localizedLowercase.contains(lowercaseSearchText) || !matchingSubBreeds.isEmpty {
+                    return (key, matchingSubBreeds)
+                } else {
+                    return nil
+                }
+            }
+        }
+    }
+    
 }
+
+
 
 
 struct ContentView_Previews: PreviewProvider {
@@ -49,4 +91,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
+}
+
+extension Color {
+    static let tan = Color(red: 210 / 255, green: 180 / 255, blue: 140 / 255)
 }

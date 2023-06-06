@@ -38,9 +38,37 @@ final class NetworkCollar: ObservableObject {
                         let response = try decoder.decode(DogList.self, from: data)
                         let dogs = response.message
                         self?.dogs = dogs
+                        
                     } catch {
                         print(error.localizedDescription)
                     }
+                    self?.isRefreshing = false
+                }
+                
+            }.resume()
+        }
+        
+    }
+    func fetchDogPictures(endpoints: Endpoints) {
+        
+        isRefreshing = true
+        
+        if let url = URL(string: endpoints.url) {
+            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                
+                DispatchQueue.main.async {
+                    // Handle any errors
+                    if let error = error {
+                        print("❌ Network error: \(error.localizedDescription)")
+                    }
+                    
+                    // Make sure we have data
+                    guard let data = data else {
+                        print("❌ Data is nil")
+                        return
+                    }
+                    
+                    let decoder = JSONDecoder()
                     do {
                         // Try to parse the response into our custom model
                         let response = try decoder.decode(DogPhotos.self, from: data)

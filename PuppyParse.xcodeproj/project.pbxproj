@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CDE5BCF72A2ED63600AC9693 /* DogPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5BCF62A2ED63600AC9693 /* DogPhotos.swift */; };
 		CDE5BCFA2A2EDAEF00AC9693 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CDE5BCF92A2EDAEF00AC9693 /* Kingfisher */; };
+		CDE5BD032A2F451300AC9693 /* Hello Valentina.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDE5BD022A2F451200AC9693 /* Hello Valentina.ttf */; };
 		CDF799382A2E791900C2C79B /* PuppyParseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799372A2E791900C2C79B /* PuppyParseApp.swift */; };
 		CDF7993A2A2E791900C2C79B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799392A2E791900C2C79B /* HomeView.swift */; };
 		CDF7993C2A2E791C00C2C79B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF7993B2A2E791C00C2C79B /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		CDE5BCF62A2ED63600AC9693 /* DogPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPhotos.swift; sourceTree = "<group>"; };
+		CDE5BD012A2F396000AC9693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CDE5BD022A2F451200AC9693 /* Hello Valentina.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hello Valentina.ttf"; sourceTree = "<group>"; };
 		CDF799342A2E791900C2C79B /* PuppyParse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppyParse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF799372A2E791900C2C79B /* PuppyParseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyParseApp.swift; sourceTree = "<group>"; };
 		CDF799392A2E791900C2C79B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -46,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CDE5BCFE2A2F373D00AC9693 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CDE5BD022A2F451200AC9693 /* Hello Valentina.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		CDF7992B2A2E791900C2C79B = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +76,8 @@
 		CDF799362A2E791900C2C79B /* PuppyParse */ = {
 			isa = PBXGroup;
 			children = (
+				CDE5BD012A2F396000AC9693 /* Info.plist */,
+				CDE5BCFE2A2F373D00AC9693 /* Font */,
 				CDF799372A2E791900C2C79B /* PuppyParseApp.swift */,
 				CDF799452A2E8B3800C2C79B /* Views */,
 				CDF799472A2E8B7A00C2C79B /* Cells */,
@@ -175,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE5BD032A2F451300AC9693 /* Hello Valentina.ttf in Resources */,
 				CDF7993F2A2E791C00C2C79B /* Preview Assets.xcassets in Resources */,
 				CDF7993C2A2E791C00C2C79B /* Assets.xcassets in Resources */,
 			);
@@ -326,6 +340,7 @@
 				DEVELOPMENT_TEAM = RYNY4CYWCT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PuppyParse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,6 +371,7 @@
 				DEVELOPMENT_TEAM = RYNY4CYWCT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PuppyParse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
