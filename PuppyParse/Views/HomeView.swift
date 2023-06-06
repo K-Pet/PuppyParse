@@ -14,18 +14,31 @@ struct HomeView: View {
     var body: some View {
         NavigationView{
             ZStack {
-                List {
-                    ForEach(nc.dogs.keys.sorted(), id: \.self) { key in
-                        DogCell(breed: key)
+                if nc.isRefreshing {
+                    ProgressView()
+                } else {
+                    List {
+                        ForEach(nc.dogs.keys.sorted(), id: \.self) { key in
+                            if let values = nc.dogs[key], !values.isEmpty {
+                                ForEach(values, id: \.self) { value in
+                                    NavigationLink(destination: DogDetailView(breed: key, subBreed: value)) {
+                                        DogCell(breed: value + " " + key)
+                                    }
+                                }
+                            } else {
+                                NavigationLink(destination: DogDetailView(breed: key, subBreed: nil)) {
+                                    DogCell(breed: key)
+                                }
+                            }
+                        }
                     }
+                    .listStyle(.plain)
+                    .navigationTitle("PuppyParse")
                 }
-                .listStyle(.plain)
-                .navigationTitle("PuppyParse")
             }
         }
         .onAppear {
-            nc.fetchDogData(endpoints: ["breeds","list","all"])
-
+            nc.fetchDogData(endpoints: .breeds)
         }
     }
 }

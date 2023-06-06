@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDE5BCF72A2ED63600AC9693 /* DogPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5BCF62A2ED63600AC9693 /* DogPhotos.swift */; };
+		CDE5BCFA2A2EDAEF00AC9693 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CDE5BCF92A2EDAEF00AC9693 /* Kingfisher */; };
 		CDF799382A2E791900C2C79B /* PuppyParseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799372A2E791900C2C79B /* PuppyParseApp.swift */; };
 		CDF7993A2A2E791900C2C79B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799392A2E791900C2C79B /* HomeView.swift */; };
 		CDF7993C2A2E791C00C2C79B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF7993B2A2E791C00C2C79B /* Assets.xcassets */; };
@@ -14,9 +16,12 @@
 		CDF7994A2A2E8BDD00C2C79B /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799492A2E8BDD00C2C79B /* DogCell.swift */; };
 		CDF7994C2A2E8C9300C2C79B /* DogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7994B2A2E8C9300C2C79B /* DogList.swift */; };
 		CDF7994E2A2E907C00C2C79B /* NetworkCollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7994D2A2E907B00C2C79B /* NetworkCollar.swift */; };
+		CDF799502A2EB76E00C2C79B /* DogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7994F2A2EB76E00C2C79B /* DogDetailView.swift */; };
+		CDF799522A2ECC5800C2C79B /* NetworkCollarEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF799512A2ECC5800C2C79B /* NetworkCollarEndpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CDE5BCF62A2ED63600AC9693 /* DogPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPhotos.swift; sourceTree = "<group>"; };
 		CDF799342A2E791900C2C79B /* PuppyParse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppyParse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF799372A2E791900C2C79B /* PuppyParseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyParseApp.swift; sourceTree = "<group>"; };
 		CDF799392A2E791900C2C79B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -25,6 +30,8 @@
 		CDF799492A2E8BDD00C2C79B /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
 		CDF7994B2A2E8C9300C2C79B /* DogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogList.swift; sourceTree = "<group>"; };
 		CDF7994D2A2E907B00C2C79B /* NetworkCollar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCollar.swift; sourceTree = "<group>"; };
+		CDF7994F2A2EB76E00C2C79B /* DogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailView.swift; sourceTree = "<group>"; };
+		CDF799512A2ECC5800C2C79B /* NetworkCollarEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCollarEndpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE5BCFA2A2EDAEF00AC9693 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				CDF799392A2E791900C2C79B /* HomeView.swift */,
+				CDF7994F2A2EB76E00C2C79B /* DogDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,7 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				CDF7994B2A2E8C9300C2C79B /* DogList.swift */,
+				CDE5BCF62A2ED63600AC9693 /* DogPhotos.swift */,
 				CDF7994D2A2E907B00C2C79B /* NetworkCollar.swift */,
+				CDF799512A2ECC5800C2C79B /* NetworkCollarEndpoints.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +127,9 @@
 			dependencies = (
 			);
 			name = PuppyParse;
+			packageProductDependencies = (
+				CDE5BCF92A2EDAEF00AC9693 /* Kingfisher */,
+			);
 			productName = PuppyParse;
 			productReference = CDF799342A2E791900C2C79B /* PuppyParse.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +158,9 @@
 				Base,
 			);
 			mainGroup = CDF7992B2A2E791900C2C79B;
+			packageReferences = (
+				CDE5BCF82A2EDAEF00AC9693 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = CDF799352A2E791900C2C79B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -171,10 +188,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF7994E2A2E907C00C2C79B /* NetworkCollar.swift in Sources */,
+				CDE5BCF72A2ED63600AC9693 /* DogPhotos.swift in Sources */,
 				CDF7994C2A2E8C9300C2C79B /* DogList.swift in Sources */,
 				CDF7993A2A2E791900C2C79B /* HomeView.swift in Sources */,
 				CDF799382A2E791900C2C79B /* PuppyParseApp.swift in Sources */,
+				CDF799502A2EB76E00C2C79B /* DogDetailView.swift in Sources */,
 				CDF7994A2A2E8BDD00C2C79B /* DogCell.swift in Sources */,
+				CDF799522A2ECC5800C2C79B /* NetworkCollarEndpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +397,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDE5BCF82A2EDAEF00AC9693 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDE5BCF92A2EDAEF00AC9693 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDE5BCF82A2EDAEF00AC9693 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CDF7992C2A2E791900C2C79B /* Project object */;
 }
